@@ -70,6 +70,9 @@ class App:
                 _list = cloudflare.create_list(list_name, chunk)
 
                 cf_lists.append(_list)
+                
+                # Sleep for 10 seconds to prevent API rate limiting
+                time.sleep(10)
 
         # get the gateway policies
         cf_policies = cloudflare.get_firewall_policies(self.name_prefix)
