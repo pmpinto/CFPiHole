@@ -28,3 +28,9 @@ jobs:
         CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
         CF_IDENTIFIER: ${{ secrets.CF_IDENTIFIER }}
       run: python3 main.py
+    - name: git
+      run: |
+        git --version
+        git config user.name "GitHub Actions Bot"
+        git config user.email "<>"
+        git commit --allow-empty -m "chore: Keep GitHub Workflow Alive"
